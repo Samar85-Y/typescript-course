@@ -18,18 +18,19 @@
  */
 
 export function toEuro(amount: number, currencySymbol: string = "€"): string {
-  return "";
+  const formatted = amount.toFixed(2);
+  return `${formatted} ${currencySymbol}`;
 }
 
 export function isAdult(age: number): boolean {
-  // TODO
-  return false;
+  return age >= 18;
 }
 
 export function normalizeName(name: string): string {
-  // TODO
-  return "";
+  const trimmed = name.trim().replace(/\s+/g, " ");
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
 }
+
 
 // Mini-Checks (sollten später true sein)
 // console.log(toEuro(12) === "12.00 €");
