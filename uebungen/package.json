@@ -1,0 +1,21 @@
+{
+  "name": "00-grundlagen",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jaderbass/typescript-course#readme",
+  "bugs": {
+    "url": "https://github.com/jaderbass/typescript-course/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaderbass/typescript-course"
+  },
+  "license": "ISC",
+  "author": "Jörg Aderhold",
+  "main": "script.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "start": "lite-server"
+  }
+}
