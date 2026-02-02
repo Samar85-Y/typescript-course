@@ -14,11 +14,15 @@
 
 export function parseJson(json: string): unknown {
   // TODO
-  return {};
+  return JSON.parse(json);
 }
 
 export function getTitle(obj: unknown): string | undefined {
   // TODO
+  if(
+    typeof obj === "object" && obj !== null && "title" in obj &&
+    typeof(obj as any).title
+  )
   return undefined;
 }
 

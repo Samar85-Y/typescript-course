@@ -15,14 +15,25 @@
  */
 
 export function parsePrice(raw: string): number {
-  // TODO
-  return 0;
+  const cleaned = raw
+    .trim()
+    .replace("€", "")
+    .replace(/\s+/g, "")
+    .replace(",", ".");
+
+  const value = Number(cleaned);
+
+  if (Number.isNaN(value)) {
+    throw new Error("Invalid price");
+  }
+
+  return value;
 }
 
 export function formatUserLine(name: string, age: number, active: boolean): string {
-  // TODO
-  return "";
+  return `${name} (${age}) - ${active ? "aktiv" : "inaktiv"}`;
 }
+
 
 console.log(parsePrice("12,50 €") === 12.5);
 console.log(formatUserLine("Mia", 20, false) === "Mia (20) - inaktiv");

@@ -17,14 +17,18 @@ export type Product = {
 
 export function priceEuro(p: Product): string {
   // TODO
-  return "";
+
+  return (p.priceCents /100).toFixed(2) + "€";
 }
 
 export function addTag(p: Product, tag: string): Product {
-  // TODO
-  return p;
+  const currentTags = p.tags ?? [];
+  const newTags = currentTags.indexOf(tag) !== -1 ? currentTags : [...currentTags, tag];
+
+  return { ...p, tags: newTags };
 }
+
 
 const p1: Product = { id: "p1", title: "Karabiner", priceCents: 1299 };
 console.log(priceEuro(p1) === "12.99 €");
-console.log(addTag(p1, "climbing").tags?.includes("climbing") === true);
+console.log((addTag(p1, "climbing").tags?.indexOf("climbing") ?? -1) !== -1);

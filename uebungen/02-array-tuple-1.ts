@@ -9,19 +9,29 @@
  */
 
 export function sum(values: number[]): number {
-  // TODO
-  return 0;
+  return values.reduce((acc, v) => acc + v, 0);
 }
 
 export function unique(values: string[]): string[] {
-  // TODO
-  return [];
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const v of values) {
+    if (!seen.has(v)) {
+      seen.add(v);
+      result.push(v);
+    }
+  }
+
+  return result;
 }
 
 export function topN(values: number[], n: number): number[] {
-  // TODO
-  return [];
+  return [...values]
+    .sort((a, b) => b - a)
+    .slice(0, n);
 }
+
 
 console.log(sum([1, 2, 3]) === 6);
 console.log(unique(["a", "a", "b"]).join(",") === "a,b");
