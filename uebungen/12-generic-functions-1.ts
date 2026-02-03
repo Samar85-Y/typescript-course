@@ -6,14 +6,17 @@
  */
 
 export function first<T>(items: T[]): T | undefined {
-  // TODO
-  return undefined;
+  return items.length > 0 ? items[0] : undefined;
 }
 
 export function mapTo<T, R>(items: T[], fn: (x: T) => R): R[] {
-  // TODO
-  return [];
+  const result: R[] = [];
+  for (const item of items) {
+    result.push(fn(item));
+  }
+  return result;
 }
+
 
 console.log(first([10, 20]) === 10);
 console.log(mapTo([1, 2], n => `${n}`).join(",") === "1,2");

@@ -8,13 +8,16 @@
  */
 
 export function isStringArray(value: unknown): value is string[] {
-  // TODO
-  return false;
+  return Array.isArray(value) && value.every(el => typeof el === "string");
 }
+
 
 export function joinIfStrings(value: unknown): string {
   // TODO
-  return "invalid";
+  if (isStringArray(value)) {
+    return value.join(", ");
+  }
+  else { return "invalid"; }
 }
 
 console.log(joinIfStrings(["a", "b"]) === "a,b");
