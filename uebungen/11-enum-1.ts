@@ -19,7 +19,7 @@ export enum OrderStatus {
 
 export function canShip(status: OrderStatus): boolean {
   // TODO
-  return status === OrderStatus.Paid;
+  return (status === OrderStatus.Paid) ? true : false;
 }
 
 export function nextStatus(status: OrderStatus): OrderStatus {

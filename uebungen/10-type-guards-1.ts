@@ -15,7 +15,7 @@ export function isStringArray(value: unknown): value is string[] {
 export function joinIfStrings(value: unknown): string {
   // TODO
   if (isStringArray(value)) {
-    return value.join(", ");
+    return value.join(",");
   }
   else { return "invalid"; }
 }

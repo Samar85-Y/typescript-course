@@ -6,7 +6,7 @@
  */
 
 export function first<T>(items: T[]): T | undefined {
-  return items.length > 0 ? items[0] : undefined;
+  return items[0];
 }
 
 export function mapTo<T, R>(items: T[], fn: (x: T) => R): R[] {
